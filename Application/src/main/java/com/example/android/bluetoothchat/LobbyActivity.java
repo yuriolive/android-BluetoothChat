@@ -38,7 +38,7 @@ import com.parse.ParseAnalytics;
  */
 public class LobbyActivity extends SampleActivityBase {
 
-    public static final String TAG = "MainActivity";
+    public static final String TAG = "LobbyActivity";
 
     // Whether the Log Fragment is currently shown
     private boolean mLogShown;

@@ -70,11 +70,11 @@ public class DeviceListActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         // Setup the window
-        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_device_list);
 
         // Set result CANCELED in case the user backs out
-       // setResult(Activity.RESULT_CANCELED);
+        setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         ImageButton scanButton = (ImageButton) findViewById(R.id.button_scan);
@@ -123,7 +123,6 @@ public class DeviceListActivity extends Activity {
      * Start device discover with the BluetoothAdapter
      */
     private void doDiscovery() {
-        Log.d(TAG, "doDiscovery()");
 
         // Indicate scanning in the title
         setProgressBarIndeterminateVisibility(true);
@@ -179,10 +178,9 @@ public class DeviceListActivity extends Activity {
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                // If it's already paired, skip it, because it's been listed already
-                if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
-                    mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-                }
+
+                mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+
                 // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 setProgressBarIndeterminateVisibility(false);

@@ -154,14 +154,17 @@ public class LobbyActivity extends Activity {
 
 
             // Create the result Intent and include the MAC address
-            Intent intent = new Intent();
+            Intent intent = new Intent(LobbyActivity.this, MainActivity.class);
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
 
-            // Set result and finish this Activity
-            setResult(Activity.RESULT_OK, intent);
-            finish();
+            startActivity(intent);
+
         }
     };
+
+    public String getAddress () {
+        return EXTRA_DEVICE_ADDRESS;
+    }
 
     /**
      * The BroadcastReceiver that listens for discovered devices and changes the title when

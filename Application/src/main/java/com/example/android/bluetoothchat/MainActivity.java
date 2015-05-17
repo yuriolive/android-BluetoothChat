@@ -16,6 +16,7 @@
 
 package com.example.android.bluetoothchat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
@@ -49,9 +50,14 @@ public class MainActivity extends SampleActivityBase {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             BluetoothChatFragment fragment = new BluetoothChatFragment();
             //LobbyActivity fragment = new LobbyActivity();
+            Intent intent = getIntent();
+            fragment.connectDevice(intent, true);
+
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
+
+
     }
 
     @Override

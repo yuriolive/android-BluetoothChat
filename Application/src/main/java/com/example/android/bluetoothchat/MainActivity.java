@@ -18,26 +18,18 @@ package com.example.android.bluetoothchat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.android.common.activities.SampleActivityBase;
 import com.parse.ParseAnalytics;
 
-/**
- * A simple launcher activity containing a summary sample description, sample log and a custom
- * {@link android.support.v4.app.Fragment} which can display a view.
- * <p>
- * For devices with displays with a width of 720dp or greater, the sample log is always visible,
- * on other devices it's visibility is controlled by an item on the Action Bar.
- */
 public class MainActivity extends SampleActivityBase {
-
-    public static final String TAG = "MainActivity";
-
-    // Whether the Log Fragment is currently shown
-    private boolean mLogShown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +39,15 @@ public class MainActivity extends SampleActivityBase {
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
         if (savedInstanceState == null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            BluetoothChatFragment fragment = new BluetoothChatFragment();
-            //LobbyActivity fragment = new LobbyActivity();
-            Intent intent = getIntent();
-            fragment.connectDevice(intent, true);
 
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            Bundle bundle = new Bundle();
+            bundle.putString("device_address", getIntent().getExtras().getString("device_address"));
+            BluetoothChatFragment fragment = new BluetoothChatFragment();
+            fragment.setArguments(bundle);
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
-
-
     }
 
     @Override
@@ -81,4 +71,21 @@ public class MainActivity extends SampleActivityBase {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_bluetooth_chat, container, false);
+            return rootView;
+        }
+    }
 }

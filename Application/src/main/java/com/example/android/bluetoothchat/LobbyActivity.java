@@ -122,8 +122,6 @@ public class LobbyActivity extends Activity {
      * Start device discover with the BluetoothAdapter
      */
     private void doDiscovery() {
-        Log.d(TAG, "doDiscovery()");
-
         // Indicate scanning in the title
         setProgressBarIndeterminateVisibility(true);
 
@@ -151,6 +149,7 @@ public class LobbyActivity extends Activity {
             // Get the device MAC address, which is the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
+
 
 
             // Create the result Intent and include the MAC address

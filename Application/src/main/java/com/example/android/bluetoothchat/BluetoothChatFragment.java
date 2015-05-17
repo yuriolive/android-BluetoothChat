@@ -62,12 +62,12 @@ public class BluetoothChatFragment extends Fragment {
     /**
      * Name of the connected device
      */
-    private String mConnectedDeviceName = null;
+    public static String mConnectedDeviceName = null;
 
     /**
      * Array adapter for the conversation thread
      */
-    private ArrayAdapter<String> mConversationArrayAdapter;
+    public static ArrayAdapter<String> mConversationArrayAdapter;
 
     /**
      * String buffer for outgoing messages
@@ -273,7 +273,7 @@ public class BluetoothChatFragment extends Fragment {
     /**
      * The Handler that gets information back from the BluetoothChatService
      */
-    private final Handler mHandler = new Handler() {
+   private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             FragmentActivity activity = getActivity();

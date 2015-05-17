@@ -24,7 +24,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +36,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.common.logger.Log;
 
@@ -69,11 +73,7 @@ public class LobbyActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         // Setup the window
-        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_device_list);
-
-        // Set result CANCELED in case the user backs out
-       // setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         ImageButton scanButton = (ImageButton) findViewById(R.id.button_scan);
@@ -103,6 +103,11 @@ public class LobbyActivity extends Activity {
 
         // Get the local Bluetooth adapter
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if(mBtAdapter==null) return;
+
+        ensureDiscoverable();
+
     }
 
     @Override
@@ -161,10 +166,6 @@ public class LobbyActivity extends Activity {
         }
     };
 
-    public String getAddress () {
-        return EXTRA_DEVICE_ADDRESS;
-    }
-
     /**
      * The BroadcastReceiver that listens for discovered devices and changes the title when
      * discovery is finished
@@ -194,21 +195,11 @@ public class LobbyActivity extends Activity {
         }
     };
 
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.activity_device_list, container, false);
-            return rootView;
+    private void ensureDiscoverable() {
+        if (mBtAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
+            Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 0);
+            startActivity(discoverableIntent);
         }
     }
-
 }

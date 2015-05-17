@@ -5,7 +5,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    tools:context=".MainActivity$PlaceholderFragment">
+    tools:context=".LobbyActivity$PlaceholderFragment">
 
     <ListView
         android:layout_width="match_parent"

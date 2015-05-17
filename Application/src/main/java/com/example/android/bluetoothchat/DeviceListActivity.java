@@ -25,17 +25,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.android.common.logger.Log;
-
-import java.util.Set;
 
 /**
  * This Activity appears as a dialog. It lists any paired devices and
@@ -70,11 +66,11 @@ public class DeviceListActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         // Setup the window
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_device_list);
 
         // Set result CANCELED in case the user backs out
-        setResult(Activity.RESULT_CANCELED);
+       // setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         ImageButton scanButton = (ImageButton) findViewById(R.id.button_scan);
@@ -123,6 +119,7 @@ public class DeviceListActivity extends Activity {
      * Start device discover with the BluetoothAdapter
      */
     private void doDiscovery() {
+        Log.d(TAG, "doDiscovery()");
 
         // Indicate scanning in the title
         setProgressBarIndeterminateVisibility(true);
@@ -178,7 +175,7 @@ public class DeviceListActivity extends Activity {
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-
+                // List ALL
                 mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
 
                 // When discovery is finished, change the Activity title

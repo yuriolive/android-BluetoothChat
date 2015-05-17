@@ -25,7 +25,8 @@
         android:id="@+id/button_scan"
         android:layout_gravity="right"
         android:src="@drawable/ic_refresh_but"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:background="#00ffffff" />
 
 
     <TextView

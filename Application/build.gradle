@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -15,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
     compile 'com.android.support:support-v4:21.0.2'
     compile 'com.android.support:gridlayout-v7:21.0.2'
     compile 'com.android.support:cardview-v7:21.0.2'

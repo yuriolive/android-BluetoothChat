@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-1a4ce155d1eff1eb4cd6387639edf22bfb554bc5.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-bba11a36123cc51f1cb9dac122c1c789e07b6b07.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-45d49164233fdb46ca8761c8285f7fd321d22a5b.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/libs/Parse-1.9.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fe739334780fe321141e62720822c2d456061899">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/Parse-1.9.2-51433855216a523fd1b340566bf5b6b6c450d03f.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-a3e4b22c6ebca8d3c72d0d92b401759ee5df4e54.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9742ced04aafd9ac97dd2c66c1aa0e32d2ae7e54">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-e1325c874e64793ede302efe83e9412b4ee68193.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-3d5e364c37261cc94203943cc24862fb6774e7f4.jar" />
+    </item>
+    <item
+        jar="/home/k4ne/android-BluetoothChat/Application/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
+        <dex dex="/home/k4ne/android-BluetoothChat/Application/build/intermediates/pre-dexed/debug/classes-3e60f5a3f5610f9071cb342f7100581464da2cd4.jar" />
+    </item>
+
+</items>
